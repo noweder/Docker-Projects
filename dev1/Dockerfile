@@ -4,6 +4,8 @@ COPY ./app/ /app
 
 WORKDIR /app
 
+RUN pip install Flask
+
 EXPOSE 5000
 
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT [ "python", "app.py" ] 
