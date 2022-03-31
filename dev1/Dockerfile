@@ -1,12 +1,13 @@
 FROM python
 
-COPY ./app/ /app
 
 WORKDIR /app
 
 RUN pip install Flask
 
 EXPOSE 5000
+
+COPY ./app/ /app
 
 ENTRYPOINT [ "python" ]
 
