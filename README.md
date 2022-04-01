@@ -12,8 +12,8 @@ This repo includes some projects and general useful Docker commands
 * List docker images: `docker images`
 * List running containers: `docker ps`
 * List all containers: `docker ps -a`
-* Run a container interactively: docker run -it IMAGE
-* Run a container in the background: docker run -d IMAGE
+* Run a container interactively: `docker run -it IMAGE`
+* Run a container in the background: `docker run -d IMAGE`
 * Use flag `-w` to set a working directory inside the container
 * User flag `-v` to mount a volume into the container
 * Delete all images: `docker rmi -f $(docker images -a -q)`
