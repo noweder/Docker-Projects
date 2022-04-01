@@ -1,6 +1,6 @@
 # Docker Projects
 
-This repo include some projects and general useful Docker commands
+This repo includes some projects and general useful Docker commands
 
 ## Useful Docker Commands
 
