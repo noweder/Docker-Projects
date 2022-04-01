@@ -8,7 +8,6 @@ This repo includes some projects and general useful Docker commands
 * Search the Docker Hub for images: `docker search IMAGE`
 * Pull an image from Docker Hub: `docker pull IMAGE`
 * Show the history of an image: `docker history IMAGE`
-* 
 * List docker images: `docker images`
 * List running containers: `docker ps`
 * List all containers: `docker ps -a`
