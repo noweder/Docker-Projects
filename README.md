@@ -24,4 +24,4 @@ This repo includes some projects and general useful Docker commands
 * Watch containers: watch docker ps
 * Save an image into a tar archive: `docker save -o NAME.tar IMAGE`
 * Load an image from a tar archive: `docker load -i NAME.tar`
-* Tage an image: `docker tag IMAGE IMAGE:TAG`
+* Tag an image: `docker tag IMAGE IMAGE:TAG`
