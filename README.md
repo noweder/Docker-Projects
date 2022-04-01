@@ -21,7 +21,7 @@ This repo includes some projects and general useful Docker commands
 * Build an image from Dockerfile: `docker build -t IMAGE-TAG .`
 * Specify a Dockerfile using `-f`: `docker build -f SPECIFIED DOCKERFILE .`
 * Expose a port from host to container: `docker run -dp HOST-PORT:CONTAINER-PORT IMAGE`
-* Watch containers: watch docker ps
+* Watch containers: `watch docker ps`
 * Save an image into a tar archive: `docker save -o NAME.tar IMAGE`
 * Load an image from a tar archive: `docker load -i NAME.tar`
 * Tag an image: `docker tag IMAGE IMAGE:TAG`
