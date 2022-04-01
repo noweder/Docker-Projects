@@ -6,4 +6,5 @@ After you create the image, you can run a docker container using the following c
 
 You can then verify connectivity from the host to the web server running in the container using the following command: `curl localhost:<HOST-PORT>`
 
+To check if the container is healthy or not, you can use to the following to command to watch the health state: `watch docker ps`
 
