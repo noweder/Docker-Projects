@@ -34,5 +34,4 @@ This repo includes some projects and general useful Docker commands
 * Inspect a created volume: `docker volume inspect VOL-NAME`
 * Mountpoint of the created volume is `/var/lib/docker/volumes/NAME/_data`
 * Remove the created container once exited: `docker run --rm --name CONTAINER-NAME IMAGE-NAME`
-* Creating a ``.dockerignore` file in the same `Dockerfile` level, and listing file names inside it, will ignore copying these files into the docker image you build.
-* 
+* Creating a `.dockerignore` file in the same `Dockerfile` level, and listing file names inside it, will ignore copying these files into the docker image you build.
