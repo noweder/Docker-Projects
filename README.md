@@ -33,4 +33,4 @@ This repo includes some projects and general useful Docker commands
 * Create a docker volume: `docker volume create VOL-NAME`
 * Inspect a created volume: `docker volume inspect VOL-NAME`
 * Mountpoint of the created volume is `/var/lib/docker/volumes/NAME/_data`
-* Create a container and mount a created volume: `docker run -dp HOST-PORT:CONTAINER-PORT --name NAME --mount source=VOL-NAME,target=CONTAINER-PATH dev1`
+* Remove the created container once exited: `docker run --rm --name CONTAINER-NAME IMAGE-NAME`
