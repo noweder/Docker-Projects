@@ -35,3 +35,5 @@ This repo includes some projects and general useful Docker commands
 * Mountpoint of the created volume is `/var/lib/docker/volumes/NAME/_data`
 * Remove the created container once exited: `docker run --rm --name CONTAINER-NAME IMAGE-NAME`
 * Creating a `.dockerignore` file in the same `Dockerfile` level, and listing file names inside it, will ignore copying these files into the docker image you build.
+* Run a `docker-compose.yml` file using `docker-compose up`. If you want to run it in detach mode, use `docker-compose up -d`
+* Run `docker-compose down` to kill everything created by `docker-compose`.
