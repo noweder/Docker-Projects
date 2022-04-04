@@ -37,3 +37,6 @@ This repo includes some projects and general useful Docker commands
 * Creating a `.dockerignore` file in the same `Dockerfile` level, and listing file names inside it, will ignore copying these files into the docker image you build.
 * Run a `docker-compose.yml` file using `docker-compose up`. If you want to run it in detach mode, use `docker-compose up -d`
 * Run `docker-compose down` to kill everything created by `docker-compose`. However, any created volumes will still retain. To auto remove created volumes, you can use the flag `-v`
+* Volumes created and mounted with containers can be found in `/var/lib/docker/volumes` directory.
+* Copy files/folders between a container and the local filesystem using `docker cp CONTAINER_NAME:SRC_PATH DEST_PATH`
+* 
