@@ -27,7 +27,7 @@ services:
       - type: volume
         source: influxdb-vol
         target: /var/lib/influxdb2
-    enviromnent:
+    environment:
       - DOCKER_INFLUXDB_INIT_MODE=setup 
       - DOCKER_INFLUXDB_INIT_USERNAME=hamza
       - DOCKER_INFLUXDB_INIT_PASSWORD=noweder@1234
