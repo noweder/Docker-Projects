@@ -7,6 +7,20 @@
         "info": ""
     },
     {
+        "id": "14c08b1168925fd8",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "influxdb",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://influxdb:8086",
+        "rejectUnauthorized": true
+    },
+    {
         "id": "97da25623f601067",
         "type": "inject",
         "z": "f6f2187d.f17ca8",
@@ -20,14 +34,14 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "30",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 340,
+        "x": 350,
         "y": 300,
         "wires": [
             [
@@ -53,7 +67,8 @@
         "y": 300,
         "wires": [
             [
-                "1d496f54e79da402"
+                "1d496f54e79da402",
+                "d0b7fecf2665442c"
             ]
         ]
     },
@@ -73,5 +88,44 @@
         "x": 810,
         "y": 300,
         "wires": []
+    },
+    {
+        "id": "e2e3416b290e249f",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "14c08b1168925fd8",
+        "name": "influxdb",
+        "measurement": "data",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "noweder",
+        "bucket": "noweder-bucket",
+        "x": 835,
+        "y": 420,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "d0b7fecf2665442c",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "msg.payload = [\n    [{\n        temp: msg.payload.data.temp,\n    },\n    {\n        device: msg.payload.data.device,\n        container: msg.payload.data.name\n    }],\n];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 420,
+        "wires": [
+            [
+                "e2e3416b290e249f",
+                "1d496f54e79da402"
+            ]
+        ]
     }
 ]
