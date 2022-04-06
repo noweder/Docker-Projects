@@ -33,6 +33,7 @@ services:
       - DOCKER_INFLUXDB_INIT_PASSWORD=noweder@1234
       - DOCKER_INFLUXDB_INIT_ORG=noweder
       - DOCKER_INFLUXDB_INIT_BUCKET=noweder-bucket
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=hamzatoken
 volumes:
   dev1-vol: {}
   nodered-vol: {}
