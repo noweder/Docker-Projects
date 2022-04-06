@@ -18,6 +18,8 @@ services:
       - type: volume
         source: nodered-vol
         target: /data
+    environment:
+      - INFLUXDB_TOKEN=hamzatoken
   influxdb:
     container_name: influxdb  
     build: ./influxdb/
