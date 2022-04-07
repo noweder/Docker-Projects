@@ -36,7 +36,21 @@ services:
       - DOCKER_INFLUXDB_INIT_ORG=noweder
       - DOCKER_INFLUXDB_INIT_BUCKET=noweder-bucket
       - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=hamzatoken
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: volume
+        source: grafana-vol
+        target: /var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=hamza
+      - GF_SECURITY_ADMIN_PASSWORD=noweder@1234
 volumes:
   dev1-vol: {}
   nodered-vol: {}
   influxdb-vol: {}
+  grafana-vol: {}
+  
