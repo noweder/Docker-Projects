@@ -38,7 +38,7 @@ services:
       - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=hamzatoken
   grafana:
     container_name: grafana
-    build: ./grafana
+    build: ./grafana/
     ports:
       - "3000:3000"
     volumes:
@@ -49,9 +49,23 @@ services:
       - GF_SECURITY_ADMIN_USER=hamza
       - GF_SECURITY_ADMIN_PASSWORD=noweder@1234
       - INFLUXDB_TOKEN=hamzatoken
+  postgres:
+    container_name: postgres
+    build: ./postgres/
+    ports:
+      - "5432:5432"
+    volumes:
+      - type: volume
+        source: postgres-vol
+        target: /var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=hamza
+      - POSTGRES_PASSWORD=noweder@1234
+      - POSTGRES_DB=noweder-db
 volumes:
   dev1-vol: {}
   nodered-vol: {}
   influxdb-vol: {}
   grafana-vol: {}
+  postgres-vol: {}
   
