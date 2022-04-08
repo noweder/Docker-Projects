@@ -60,7 +60,7 @@ services:
         target: /var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=hamza
-      - POSTGRES_PASSWORD=noweder@1234
+      - POSTGRES_PASSWORD=noweder1234
       - POSTGRES_DB=noweder-db
   postgrest:
     container_name: postgrest
@@ -68,7 +68,7 @@ services:
     ports:
       - "4000:3000"
     environment:
-      - PGRST_DB_URI=postgres://hamza:noweder@1234@postgres:5432/noweder-db
+      - PGRST_DB_URI=postgres://hamza:noweder1234@postgres:5432/noweder-db
       - PGRST_DB_ANON_ROLE=hamza
       - PGRST_DB_SCHEMA=public
 volumes:
