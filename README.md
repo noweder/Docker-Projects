@@ -39,4 +39,4 @@ This repo includes some projects and general useful Docker commands
 * Run `docker-compose down` to kill everything created by `docker-compose`. However, any created volumes will still retain. To auto remove created volumes, you can use the flag `-v`
 * Volumes created and mounted with containers can be found in `/var/lib/docker/volumes` directory.
 * Copy files/folders between a container and the local filesystem using `docker cp CONTAINER_NAME:SRC_PATH DEST_PATH`
-* 
+* Run the following example command to list the databases in postgres: `docker exec -it postgres psql -d noweder-db -U hamza -c "\l"`
