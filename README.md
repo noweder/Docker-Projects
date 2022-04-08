@@ -40,3 +40,8 @@ This repo includes some projects and general useful Docker commands
 * Volumes created and mounted with containers can be found in `/var/lib/docker/volumes` directory.
 * Copy files/folders between a container and the local filesystem using `docker cp CONTAINER_NAME:SRC_PATH DEST_PATH`
 * Run the following example command to list the databases in postgres: `docker exec -it postgres psql -d noweder-db -U hamza -c "\l"`
+* Use the following example command to stop and remove container image : `docker-compose rm -s postgres`
+* Use the following example command to remove a volume: `docker volume rm VOL-NAME`
+* Use the following example command to list database tables: `docker exec -it postgres psql -d noweder-db -U hamza -c "\dt"`
+* Use the following example command to list all table content: `docker exec -it postgres psql -d noweder-db -U hamza -c "select * from temperature_data"`
+* 
