@@ -32,7 +32,6 @@
         "type": "influxdb",
         "uid": "P3C6603E967DC8568"
       },
-      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -81,10 +80,35 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "temp {container=\"f38845f90bd5\", device=\"dev1\"}"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
-        "h": 9,
+        "h": 8,
         "w": 12,
         "x": 0,
         "y": 0
@@ -117,9 +141,8 @@
     {
       "datasource": {
         "type": "postgres",
-        "uid": "iPUIUd8nz"
+        "uid": "PA942B37CCFAF5A81"
       },
-      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -171,7 +194,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
+        "h": 8,
         "w": 12,
         "x": 12,
         "y": 0
@@ -192,7 +215,7 @@
         {
           "datasource": {
             "type": "postgres",
-            "uid": "iPUIUd8nz"
+            "uid": "PA942B37CCFAF5A81"
           },
           "format": "time_series",
           "group": [],
