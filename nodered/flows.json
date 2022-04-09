@@ -7,20 +7,6 @@
         "info": ""
     },
     {
-        "id": "14c08b1168925fd8",
-        "type": "influxdb",
-        "hostname": "127.0.0.1",
-        "port": "8086",
-        "protocol": "http",
-        "database": "database",
-        "name": "influxdb",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "2.0",
-        "url": "http://influxdb:8086",
-        "rejectUnauthorized": true
-    },
-    {
         "id": "97da25623f601067",
         "type": "inject",
         "z": "f6f2187d.f17ca8",
@@ -68,7 +54,8 @@
         "wires": [
             [
                 "1d496f54e79da402",
-                "d0b7fecf2665442c"
+                "d0b7fecf2665442c",
+                "1d1ed6a1c9c8f3a5"
             ]
         ]
     },
@@ -113,7 +100,7 @@
         "type": "function",
         "z": "f6f2187d.f17ca8",
         "name": "",
-        "func": "msg.payload = [\n    [{\n        temp: msg.payload.data.temp,\n    },\n    {\n        device: msg.payload.data.device,\n        container: msg.payload.data.name\n    }],\n];\nreturn msg;",
+        "func": "msg.payload = [\n    [{\n        temp: msg.payload.data.temp,\n    },\n    {\n        device: msg.payload.data.device,\n        container: msg.payload.data.container\n    }],\n];\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -127,5 +114,59 @@
                 "1d496f54e79da402"
             ]
         ]
+    },
+    {
+        "id": "1d1ed6a1c9c8f3a5",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "msg.payload = [\n\t\t{\n\t\t    \"device\": msg.payload.data.device,\n\t\t    \"container\": msg.payload.data.container,\n\t\t    \"temperature\": msg.payload.data.temp\n\t\t}\n];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 200,
+        "wires": [
+            [
+                "23ef61025e9887ad",
+                "1d496f54e79da402"
+            ]
+        ]
+    },
+    {
+        "id": "23ef61025e9887ad",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://postgrest:3000/temperature_data",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 810,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14c08b1168925fd8",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "influxdb",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://influxdb:8086",
+        "rejectUnauthorized": true
     }
 ]
