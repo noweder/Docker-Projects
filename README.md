@@ -8,8 +8,6 @@ This simple IoT APP deployment is built using the below docker containers:
 
 * InfluxDB
 
-* Grafana
-
 * PostgreSQL
 
 * PostgREST
