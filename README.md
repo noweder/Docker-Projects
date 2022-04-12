@@ -60,4 +60,3 @@ You can access Grafana dashboard from your browser on `http://localhost:3000` an
 * Use the following example command to remove a volume: `docker volume rm VOL-NAME`
 * Use the following example command to list database tables: `docker exec -it postgres psql -d noweder-db -U hamza -c "\dt"`
 * Use the following example command to list all table content: `docker exec -it postgres psql -d noweder-db -U hamza -c "select * from temperature_data"`
-* 
