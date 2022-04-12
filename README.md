@@ -1,6 +1,24 @@
-# Docker Projects
+# Simple IoT APP on Docker
 
-This repo includes some projects and general useful Docker commands
+This simple IoT APP deployment is built using the below docker containers:
+
+* Python and Flask
+
+* Node-Red
+
+* InfluxDB
+
+* Grafana
+
+* PostgreSQL
+
+* PostgREST
+
+* Grafana
+
+Clone this repo to your local enviromnent and access it, then run `docker-compose up -d` to deploy it.
+
+You can access Grafana dashboard from your browser on `http://localhost:3000` and nodered dashboard on `http://localhost:1880`
 
 ## Useful Docker Commands
 
